@@ -8,7 +8,7 @@ import {Meal} from './meal.model';
   <!-- Meal listing section-->
   <div class="container">
     <h3>Logged food</h3>
-      <div class="mealList" *ngFor="let currentMeal of childMealList">
+      <div class="mealList" *ngFor="let currentMeal of childMealList | caloriesfilter">
         <h4><strong>Name: </strong>{{currentMeal.name}}</h4>
         <p><strong>Details: </strong>{{currentMeal.details}}</p>
         <p><strong>Calories: </strong>{{currentMeal.calories}}</p>

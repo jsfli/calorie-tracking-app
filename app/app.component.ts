@@ -21,7 +21,8 @@ import {Meal} from './meal.model';
 export class AppComponent {
   public masterMealList: Meal []=[
     new Meal ("Hamburger","Didn't get a soda or cheese on my burger", 354),
-    new Meal ("Fries", "I only ate half of them.", 365)
+    new Meal ("Fries", "I only ate half of them.", 365),
+    new Meal ("Chicke Rice","Lunch", 800)
   ]
 
   addMeal(newMealFromChild: Meal){
