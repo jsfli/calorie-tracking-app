@@ -1,5 +1,7 @@
 h1 {
-  color: blue
+  color: black;
+  font-size: 30px;
+
 }
 
 .mealList {
@@ -10,7 +12,11 @@ h1 {
   padding: 5px;
   margin: 5px;
   width: 300px;
-  height: 200px;
+  height: 180px;
   float: left;
 
+}
+
+body {
+background-color:pink;
 }
