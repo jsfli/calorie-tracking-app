@@ -8,7 +8,14 @@ import {Meal} from './meal.model';
   <!-- Meal listing section-->
   <div class="container">
     <h3>Logged food</h3>
-      <div class="mealList" *ngFor="let currentMeal of childMealList | caloriesfilter">
+    <div>
+    <select (change)="onChange($event.target.value)">
+      <option value = "all" selected="selected">Show All</option>
+      <option value = "lowCaloriesMeal">Low Calories Meal</option>
+      <option value = "highCaloriesMeal">High Calories Meal</option>
+    </select>
+    </div>
+      <div class="mealList" *ngFor="let currentMeal of childMealList | caloriesfilter:caloriesLevel">
         <h4><strong>Name: </strong>{{currentMeal.name}}</h4>
         <p><strong>Details: </strong>{{currentMeal.details}}</p>
         <p><strong>Calories: </strong>{{currentMeal.calories}}</p>
@@ -33,15 +40,19 @@ import {Meal} from './meal.model';
         <input [(ngModel)] = "selectedMeal.calories">
         <button (click)="finishedEditing()">Done</button>
       </div>
-
     </div>
-
   </div>
   `
 })
 
 export class MealListComponent {
   @Input() childMealList: Meal [];
+
+  public caloriesLevel: string ="all";
+
+  onChange(optionFromCaloriesMenu){
+    this.caloriesLevel = optionFromCaloriesMenu;
+  }
 
   selectedMeal: Meal = null;
   showEditDetails(clickedMeal: Meal) {
