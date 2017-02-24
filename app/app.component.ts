@@ -10,7 +10,9 @@ import {Meal} from './meal.model';
     <mealList
       [childMealList]="masterMealList"
     ></mealList>
-    <newMeal></newMeal>
+    <newMeal
+      (newMealSender)="addMeal($event)"
+    ></newMeal>
 
   </div>
   `
@@ -22,4 +24,7 @@ export class AppComponent {
     new Meal ("Fries", "I only ate half of them.", 365)
   ]
 
+  addMeal(newMealFromChild: Meal){
+    this.masterMealList.push(newMealFromChild);
+  }
 }
