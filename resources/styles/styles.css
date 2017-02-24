@@ -1,0 +1,16 @@
+h1 {
+  color: blue
+}
+
+.mealList {
+  box-sizing: border-box;
+  border-color: black;
+  border-style: solid;
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px;
+  width: 300px;
+  height: 200px;
+  float: left;
+
+}
